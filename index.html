@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnostic mental A4P</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero card">
+      <img class="hero-logo" src="assets/logo-a4p.png" alt="Académie de Performances A4P" />
+      <p class="eyebrow">Hub diagnostic A4P</p>
+      <h1>Plateforme de diagnostic mental</h1>
+      <p class="lead">Accès centralisé aux modules PMP, CMP et Psycho-Émotionnel, avec synthèse globale et vue propre sur mobile.</p>
+      <div class="hero-actions">
+        <button id="btn-refresh" class="btn">Actualiser les données</button>
+        <button id="btn-reset" class="btn btn-secondary">Réinitialiser le hub</button>
+      </div>
+    </section>
+
+    <section class="card score-card">
+      <p class="eyebrow">A4P • Vue d'ensemble</p>
+      <div class="score-row">
+        <div>
+          <h2>Score global mental</h2>
+          <div id="global-score" class="big-score">—</div>
+          <p id="global-subtitle" class="muted">Aucun module synchronisé</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Radar combiné</p>
+      <div class="radar-wrap">
+        <svg id="radar-svg" viewBox="0 0 420 420" class="radar" aria-label="Radar global">
+          <g id="radar-grid"></g>
+          <polygon id="radar-shape" points="" class="radar-shape"></polygon>
+          <polyline id="radar-outline" points="" class="radar-outline"></polyline>
+          <g id="radar-points"></g>
+          <g id="radar-labels"></g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="modules-grid">
+      <article class="card module-card" id="card-pmp">
+        <p class="eyebrow">Module 1</p>
+        <h2>Profil Mental (PMP)</h2>
+        <div id="pmp-status" class="status-pill status-pending">En attente</div>
+        <p id="pmp-summary" class="muted">Aucun résultat synchronisé pour le moment.</p>
+        <div class="module-actions">
+          <a class="btn" id="pmp-link" href="pmp/index.html">Ouvrir le module PMP</a>
+        </div>
+      </article>
+
+      <article class="card module-card" id="card-cmp">
+        <p class="eyebrow">Module 2</p>
+        <h2>Compétences Mentales (CMP)</h2>
+        <div id="cmp-status" class="status-pill status-pending">En attente</div>
+        <p><strong>Profil :</strong> <span id="cmp-profile">Aucun résultat</span></p>
+        <p><strong>Score :</strong> <span id="cmp-score">—</span></p>
+        <p id="cmp-summary" class="muted">Questionnaire dynamique, profil automatique, radar et synthèse professionnelle.</p>
+        <div class="module-actions">
+          <a class="btn" id="cmp-link" href="cmp/index.html">Ouvrir le test CMP</a>
+          <a class="btn btn-secondary" id="cmp-results-link" href="https://alexandregriffet-cmd.github.io/CMP-A4P-ACADEMIE-DE-PERFORMANCES-/resultats.html">Voir la synthèse</a>
+        </div>
+      </article>
+
+      <article class="card module-card" id="card-psycho">
+        <p class="eyebrow">Module 3</p>
+        <h2>Équilibre Psycho-Émotionnel</h2>
+        <div id="psycho-status" class="status-pill status-pending">En attente</div>
+        <p id="psycho-summary" class="muted">Aucun résultat synchronisé pour le moment.</p>
+        <div class="module-actions">
+          <a class="btn" id="psycho-link" href="psycho/index.html">Ouvrir le module Psycho</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Dashboard club</p>
+      <h2>Préconfiguration SaaS club</h2>
+      <div class="kv-list">
+        <p><strong>Joueurs testés :</strong> <span id="club-count">En attente</span></p>
+        <p><strong>Score mental moyen :</strong> <span id="club-score">En attente</span></p>
+        <p><strong>Ressource clé :</strong> <span id="club-resource">À calculer quand plusieurs modules seront branchés</span></p>
+      </div>
+    </section>
+
+    <details class="card tech-details">
+      <summary>Données techniques</summary>
+      <pre id="json-output">{}</pre>
+    </details>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/hub.js"></script>
+</body>
+</html>
