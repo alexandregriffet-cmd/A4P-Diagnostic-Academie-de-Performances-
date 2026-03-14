@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSYCHO | A4P</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card hero">
+      <img class="hero-logo" src="../assets/logo-a4p.png" alt="Académie de Performances A4P" />
+      <p class="eyebrow">Passerelle module</p>
+      <h1>PSYCHO A4P</h1>
+      <p class="lead">Cette page ouvre le module actif puis permet de revenir vers le hub principal.</p>
+      <div class="module-actions">
+        <a class="btn" id="open-module" href="#">Ouvrir le module</a>
+        <a class="btn btn-secondary" href="../index.html">Retour au hub</a>
+      </div>
+    </section>
+  </main>
+  <script src="../js/config.js"></script>
+  <script>
+    const links = window.A4P_CONFIG.links;
+    const map = { cmp: links.cmp, pmp: links.pmp, psycho: links.psycho };
+    document.getElementById('open-module').href = map['psycho'];
+  </script>
+</body>
+</html>
